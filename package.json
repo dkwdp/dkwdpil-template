@@ -1,0 +1,21 @@
+{
+  "name": "dkwdp-interactive-template",
+  "version": "1.0.0",
+  "description": "Showing kids how to code.",
+  "license": "GPL-3.0-or-later",
+  "author": "Bruno Schilling bruno.schilling@protonmail.ch",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3",
+    "vite": "^7.3.1",
+    "vite-plugin-dts": "^4.5.4"
+  },
+  "dependencies": {
+    "dkwdpil": "^0.0.1",
+    "p5": "^2.0.0"
+  }
+}
