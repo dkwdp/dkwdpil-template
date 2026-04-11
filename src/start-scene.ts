@@ -1,7 +1,8 @@
-import {Scene, Context, Sprite} from 'dkwdpil';
+import {Scene, Context, Sprite, Label} from 'dkwdpil';
 
 export class StartScene extends Scene {
-    public startSprite: Sprite = new Sprite("play.png", 0, 0, {size: 12.0});
+    startSprite: Sprite = new Sprite("play.png", 0, 0, {size: 12.0});
+    testLabel1: Label = new Label("Example Title", 0, 15, {fontsize: 3.0, horizAlign: "center", vertAlign: "center"});
 
     init(context: Context): void {
         context.imageMode(context.CENTER);
@@ -12,17 +13,13 @@ export class StartScene extends Scene {
     update(c: Context) {
         c.background(235);
 
-        c.textAlign(c.CENTER, c.CENTER);
-        c.textSize(1.0);
-        c.text("Example Text", 0, 15);
-
-        for (const evt of c.events) {
-            if (evt.kind === 'mousedown') {
-                if (this.startSprite.touches(c.mousePos.x, c.mousePos.y, c)) {
-                    c.nextScene = "nextScene";
-                    return;
-                }
-            }
+        if (this.startSprite.clicked) {
+            c.nextScene = "nextScene";
+        }
+        if (this.testLabel1.hovered) {
+            this.testLabel1.color = [255, 0, 0];
+        } else {
+            this.testLabel1.color = [0, 0, 0];
         }
     }
 
