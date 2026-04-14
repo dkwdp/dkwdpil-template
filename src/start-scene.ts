@@ -1,7 +1,8 @@
-import {Scene, Context, Sprite, Label} from 'dkwdpil';
+import {Scene, Context, Sprite, Label, EditScene} from 'dkwdpil';
 
 export class StartScene extends Scene {
     startSprite: Sprite = new Sprite("play.png", 0, 0, {size: 12.0});
+    editSprite: Sprite = new Sprite("edit.png", -30, 16, {size: 3.0});
     testLabel1: Label = new Label("Example Title", 0, 15, {fontsize: 3.0, horizAlign: "center", vertAlign: "center"});
 
     init(context: Context): void {
@@ -16,6 +17,10 @@ export class StartScene extends Scene {
         if (this.startSprite.clicked) {
             c.nextScene = "nextScene";
         }
+        if (this.editSprite.clicked) {
+            c.nextScene = "editScene";
+        }
+
         if (this.testLabel1.hovered) {
             this.testLabel1.color = [255, 0, 0];
         } else {
