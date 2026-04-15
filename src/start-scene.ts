@@ -1,8 +1,9 @@
-import {Scene, Context, Sprite, Label, EditScene} from 'dkwdpil';
+import {Scene, Context, Sprite, Label} from 'dkwdpil';
 
 export class StartScene extends Scene {
     startSprite: Sprite = new Sprite("play.png", 0, 0, {size: 12.0});
     editSprite: Sprite = new Sprite("edit.png", -30, 16, {size: 3.0});
+    eventLabel: Label = new Label("Events", -30, 13, {fontsize: 1.0});
     testLabel1: Label = new Label("Example Title", 0, 15, {fontsize: 3.0, horizAlign: "center", vertAlign: "center"});
 
     init(context: Context): void {
@@ -21,14 +22,13 @@ export class StartScene extends Scene {
             c.nextScene = "editScene";
         }
 
-        if (this.testLabel1.hovered) {
-            this.testLabel1.color = [255, 0, 0];
+        if (this.eventLabel.hovered) {
+            this.eventLabel.color = [255, 0, 0];
+            if (this.eventLabel.clicked) {
+                c.nextScene = "eventScene";
+            }
         } else {
-            this.testLabel1.color = [0, 0, 0];
+            this.eventLabel.color = [0, 0, 0];
         }
-    }
-
-    duration(): number {
-        return -1;
     }
 }
