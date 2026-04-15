@@ -14,7 +14,7 @@ export class EventScene extends Scene {
         c.background(235);
 
         for (const evt of c.events) {
-            this.labels.push(new Label(eventText(evt), -28, 0, {fontsize: 1.0}));
+            this.labels.push(new Label("", eventText(evt), -28, 0, {fontsize: 1.0}));
             if (this.labels.length > 10) {
                 this.labels.shift();
             }
