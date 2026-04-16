@@ -15,6 +15,13 @@ export class StartScene extends Scene {
     update(c: Context) {
         c.background(235);
 
+        if (c.keyJustPressed("KeyE")) {
+            c.nextScene = "editScene";
+        }
+        if (c.keyJustPressed("KeyV")) {
+            c.nextScene = "eventScene";
+        }
+
         if (this.startSprite.clicked) {
             c.nextScene = "nextScene";
         }

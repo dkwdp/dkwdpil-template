@@ -13,6 +13,10 @@ export class EventScene extends Scene {
     update(c: Context) {
         c.background(235);
 
+        if (c.keyJustPressed("KeyQ")) {
+            c.nextScene = "startScene";
+        }
+
         for (const evt of c.events) {
             this.labels.push(new Label("", eventText(evt), -28, 0, {fontsize: 1.0}));
             if (this.labels.length > 10) {
