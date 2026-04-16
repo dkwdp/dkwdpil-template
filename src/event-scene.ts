@@ -1,14 +1,7 @@
-import {Scene, Context, Label} from 'dkwdpil';
-import {Evt} from "../../dkwdp-interactivelib/src/event";
+import {Scene, Context, Label, Evt} from 'dkwdpil';
 
 export class EventScene extends Scene {
     labels: Label[] = [];
-
-    init(context: Context): void {
-        context.imageMode(context.CENTER);
-        context.noStroke();
-        context.fill(0);
-    }
 
     update(c: Context) {
         c.background(235);
@@ -25,7 +18,6 @@ export class EventScene extends Scene {
         }
 
         this.labels.forEach(label => label.update(c));
-
 
         for (let i = 0; i < this.labels.length; i++) {
             this.labels[i].y = 16 - i * 2;
@@ -54,8 +46,6 @@ function eventText(evt: Evt): string {
         case 'mousewheel':
             return `mousewheel (wheelY=${evt.wheelY})`;
     }
-
-    return "unknown event";
 }
 
 function getMouseButtonText(button: number): string {
