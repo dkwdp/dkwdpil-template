@@ -15,7 +15,7 @@
     "vite-plugin-dts": "^4.5.4"
   },
   "dependencies": {
-    "dkwdpil": "^0.0.1",
+    "dkwdpil": "file:../dkwdp-interactivelib",
     "p5": "^2.0.0"
   }
 }
