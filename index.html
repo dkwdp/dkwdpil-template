@@ -12,7 +12,8 @@
   <script type="module">
     import {StartScene} from "./src/start-scene";
     import {NextScene} from "./src/next-scene";
-    import {initScenes} from "dkwdpil";
+    import {EditScene, initScenes} from "dkwdpil";
+    import {EventScene} from "./src/event-scene.ts";
 
     const sketchHolder = document.getElementById('sketch-holder');
     if (!sketchHolder) {
@@ -23,9 +24,11 @@
             [
               ["startScene", new StartScene()],
               ["nextScene", new NextScene()],
+              ["editScene", new EditScene("startScene")],
+              ["eventScene", new EventScene()],
             ],
             [],
-            ["face.png", "play.png"]
+            ["face.png", "play.png", "edit.png"]
     );
   </script>
 </body>
